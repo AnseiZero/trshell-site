@@ -20,9 +20,9 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script>document.documentElement.classList.add('js')</script>
-  <script src="main.js" defer></script>
+  <script src="main.js?v=5" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -299,14 +299,14 @@
         <header class="sec-h">
           <p class="eyebrow">Early access</p>
           <h2 id="a-h">Use it on your next engagement.</h2>
-          <p class="sub">Early access is open to organisations and individuals on Debian-based Linux. Email us for a demo or pricing, and tell us a little about how you'd use it.</p>
+          <p class="sub">Early access is open to organisations and individuals on Debian-based Linux. Ask for a demo, access or pricing below, and we'll reply within 24 hours.</p>
         </header>
         <div class="demo reveal" id="demo">
           <div class="demo-copy">
             <h3>Request a demo</h3>
             <p>We'll walk you through a live run: the plan, real commands in the terminal, subagents working in their own lanes, and the findings report at the end. Bring your own questions or use case.</p>
           </div>
-          <a class="btn btn-primary" href="mailto:trust.oluwasegun@trackedincorp.org?subject=TRShell%20demo%20request&amp;body=Name%3A%0AOrganisation%20(if%20any)%3A%0AWhat%20you%27d%20like%20to%20see%3A%0APreferred%20days%20and%20times%3A%0A">
+          <a class="btn btn-primary" href="#request" data-interest="Demo">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             Request a demo
           </a>
@@ -315,13 +315,66 @@
           <article class="plan">
             <h3>For organisations</h3>
             <p>Security teams, consultancies and SOCs. Team licences, onboarding, and a direct line for feedback.</p>
-            <a class="btn btn-ghost" href="mailto:trust.oluwasegun@trackedincorp.org?subject=TRShell%20early%20access%20%E2%80%94%20organisation&amp;body=Name%3A%0AOrganisation%3A%0AHow%20many%20seats%3A%0AWhat%20you%27d%20use%20it%20for%3A%0A">Request team access</a>
+            <a class="btn btn-ghost" href="#request" data-interest="Team access">Request team access</a>
           </article>
           <article class="plan">
             <h3>For individuals</h3>
             <p>Bug bounty hunters, pentesters, auditors, researchers and students who want an agent in their own terminal.</p>
-            <a class="btn btn-ghost" href="mailto:trust.oluwasegun@trackedincorp.org?subject=TRShell%20early%20access%20%E2%80%94%20personal&amp;body=Name%3A%0AWhat%20you%27d%20use%20it%20for%3A%0A">Request personal access</a>
+            <a class="btn btn-ghost" href="#request" data-interest="Personal access">Request personal access</a>
           </article>
+        </div>
+        <div class="request reveal" id="request">
+          <div class="request-h">
+            <h3 id="r-h">Send a request</h3>
+            <p>It goes straight to our inbox. We reply within 24 hours.</p>
+          </div>
+          <form class="rform" id="rform" action="https://formspree.io/f/mvkkwkld" method="POST" novalidate aria-labelledby="r-h">
+            <input type="hidden" name="_subject" id="rSubject" value="TRShell request">
+            <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+            <div class="fields">
+              <div class="field">
+                <label for="fName">Name</label>
+                <input id="fName" name="name" type="text" autocomplete="name" required aria-describedby="fName-e">
+                <p class="ferr" id="fName-e"></p>
+              </div>
+              <div class="field">
+                <label for="fEmail">Email</label>
+                <input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="fEmail-e">
+                <p class="ferr" id="fEmail-e"></p>
+              </div>
+              <div class="field">
+                <label for="fInterest">I'm interested in</label>
+                <select id="fInterest" name="interest" required aria-describedby="fInterest-e">
+                  <option value="">Choose one</option>
+                  <option>Demo</option>
+                  <option>Team access</option>
+                  <option>Personal access</option>
+                  <option>Pricing</option>
+                </select>
+                <p class="ferr" id="fInterest-e"></p>
+              </div>
+              <div class="field">
+                <label for="fOrg">Organisation <span class="opt">(optional)</span></label>
+                <input id="fOrg" name="organisation" type="text" autocomplete="organization">
+              </div>
+              <div class="field field-wide">
+                <label for="fMsg">How would you use TRShell? <span class="opt">(optional)</span></label>
+                <textarea id="fMsg" name="message" rows="4" aria-describedby="fMsg-h"></textarea>
+                <p class="fhelp" id="fMsg-h">Bounties, audits, team size, or good days and times for a demo.</p>
+              </div>
+            </div>
+            <div class="rform-foot">
+              <button class="btn btn-primary" id="rSend" type="submit">Send request</button>
+              <p class="rstatus" id="rStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+          <div class="rdone" id="rDone" tabindex="-1" hidden>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.5l2.7 2.7L16 9.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Request sent.</h3>
+              <p id="rDoneText">Thanks. We'll reply within 24 hours.</p>
+            </div>
+          </div>
         </div>
         <div class="contact">
           <p>Or write directly: <a href="mailto:trust.oluwasegun@trackedincorp.org">trust.oluwasegun@trackedincorp.org</a></p>
