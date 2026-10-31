@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRShell — a terminal with an agent in it</title>
+  <meta name="description" content="TRShell is a desktop terminal with an AI agent built in. It plans before it acts, runs in your real terminal tabs, and shows every command and edit as it happens. Built for security operators.">
+  <meta name="theme-color" content="#1a1917">
+  <link rel="canonical" href="https://anseizero.github.io/trshell-site/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TRShell — a terminal with an agent in it">
+  <meta property="og:description" content="It plans before it acts, runs in your real terminal, delegates to subagents on their own limits, and messages your phone when it's done.">
+  <meta property="og:url" content="https://anseizero.github.io/trshell-site/">
+  <meta property="og:image" content="https://anseizero.github.io/trshell-site/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top" id="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#top" aria-label="TRShell home">
+        <svg class="mark" viewBox="108 134 289 244" aria-hidden="true"><polyline points="132.5,158.5 247.5,255.5 132.5,352.5" fill="none" stroke="currentColor" stroke-width="49" stroke-linecap="round" stroke-linejoin="round"/><rect x="289" y="305" width="108" height="48" rx="9" fill="currentColor"/></svg>
+        <span>TRShell</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#control">Control</a>
+        <a href="#access">Early access</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#access">Get early access</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- hero -->
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="kicker"><span class="dot" aria-hidden="true"></span>Early access · for security operators</p>
+          <h1>A terminal with an <span class="acc">agent</span> in it.</h1>
+          <p class="lede">TRShell plans before it acts, runs in your real terminal tabs, and shows every command and edit as it happens. You always know exactly what the agent did.</p>
+          <div class="ctas">
+            <a class="btn btn-primary" href="#access">Request early access</a>
+            <a class="btn btn-ghost" href="#trailer">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>
+              Watch the trailer
+            </a>
+          </div>
+          <p class="fine">Debian-based Linux (.deb) · bring your own models, including local ones</p>
+        </div>
+        <figure class="hero-media">
+          <div class="frame">
+            <video id="heroVideo" class="hero-video" muted loop playsinline preload="metadata"
+                   poster="assets/img/poster-loop.webp" width="1920" height="1080"
+                   aria-label="TRShell booting, then its agent planning a task, running nmap in a real terminal tab, and delegating to two subagents">
+              <source src="assets/video/loop.mp4" type="video/mp4">
+            </video>
+            <button class="vtoggle" id="heroToggle" type="button" aria-pressed="false" hidden>
+              <svg class="ic ic-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+              <svg class="ic ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>
+              <span class="vt-label">Pause</span>
+            </button>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- providers -->
+    <section class="strip" aria-label="Supported model providers">
+      <div class="wrap strip-in">
+        <span class="strip-l">Works with</span>
+        <ul>
+          <li>Anthropic</li><li>OpenAI-compatible</li><li>Google</li><li>AWS Bedrock</li><li>Ollama <span class="muted">(local)</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- features: the six acts -->
+    <section class="features" id="features" aria-labelledby="f-h">
+      <div class="wrap">
+        <header class="sec-h">
+          <p class="eyebrow">What it does</p>
+          <h2 id="f-h">An operator's console, not a black box.</h2>
+          <p class="sub">Every capability below is the real product. The target in these screens is fictional.</p>
+        </header>
+
+        <article class="feat reveal">
+          <div class="feat-copy">
+            <p class="act">It thinks.</p>
+            <h3>A plan before it acts. A model for every role.</h3>
+            <p>Every task opens with a step-by-step plan, a feasibility score and a TODO list seeded from it. Planner, executor, debugger and critic can each run on a different model, and a role falls back to your chat model if its own is unavailable.</p>
+          </div>
+          <figure class="feat-img"><img src="assets/img/plan.webp" width="1600" height="1061" loading="lazy" decoding="async" alt="A plan card with four steps and an 82% feasibility score, above a profile that binds the planner, executor, debugger and critic roles to Anthropic, OpenAI-compatible, Google and Ollama."></figure>
+        </article>
+
+        <article class="feat feat-rev reveal">
+          <div class="feat-copy">
+            <p class="act">It works.</p>
+            <h3>Your real terminal. Every command in the open.</h3>
+            <p>The agent works in the same local and SSH tabs you use, so you see exactly what it ran. Tool cards stream output while a command is still running; nothing happens behind your back.</p>
+          </div>
+          <figure class="feat-img"><img src="assets/img/terminal.webp" width="1600" height="1095" loading="lazy" decoding="async" alt="An exec_command card marked done above a terminal tab named local-main, where the agent ran nmap against staging.acme.test and four open ports are listed."></figure>
+        </article>
+
+        <div class="duo reveal">
+          <article class="card">
+            <figure><img src="assets/img/browser.webp" width="1600" height="1262" loading="lazy" decoding="async" alt="The built-in browser showing a 403 Forbidden page for /admin, with browser_navigate, browser_click and browser_screenshot tool calls below it."></figure>
+            <h3>It drives a real browser.</h3>
+            <p>Navigate, click, type, read pages, take screenshots and check the console — in a built-in browser you can watch.</p>
+          </article>
+          <article class="card">
+            <figure><img src="assets/img/diff.webp" width="1600" height="1208" loading="lazy" decoding="async" alt="A message with an attached screenshot of a 403 page, and an edited notes file whose diff adds three lines and removes one."></figure>
+            <h3>Paste a screenshot. Watch every edit live.</h3>
+            <p>Drop an image into the chat. File edits and diffs appear while they're being written, not after.</p>
+          </article>
+        </div>
+
+        <article class="feat reveal">
+          <div class="feat-copy">
+            <p class="act">It delegates.</p>
+            <h3>Subagents on their own limits.</h3>
+            <p>The main agent hands parts of a job to subagent profiles you define. Each gets its own lane in the chat and its own shell access — unrestricted, no deletion, or read-only. Declare your scope, and it warns you before a command reaches outside it.</p>
+          </div>
+          <figure class="feat-img"><img src="assets/img/subagents.webp" width="1600" height="1108" loading="lazy" decoding="async" alt="Two subagent lanes, web-recon with no-deletion access and vuln-triage with read-only access, followed by a warning that prod.acme.test is not in the declared scope."></figure>
+        </article>
+
+        <article class="feat feat-rev reveal">
+          <div class="feat-copy">
+            <p class="act">It recovers.</p>
+            <h3>When a command fails, it works out why.</h3>
+            <p>A debugger role diagnoses the failure — root cause and a suggested fix — and the agent retries with it applied. It also notices when it's stuck repeating itself and breaks out of the loop.</p>
+          </div>
+          <figure class="feat-img"><img src="assets/img/recover.webp" width="1600" height="1068" loading="lazy" decoding="async" alt="A failed ffuf command with a missing wordlist, a debugger diagnosis naming the root cause and fix, and a retry that succeeds."></figure>
+        </article>
+
+        <article class="feat reveal">
+          <div class="feat-copy">
+            <p class="act">It remembers.</p>
+            <h3>What it learns about a target, it keeps.</h3>
+            <p>Recon the agent saves about a target carries into later chats, so a new session picks up where the last one left off instead of starting cold.</p>
+          </div>
+          <figure class="feat-img"><img src="assets/img/notes.webp" width="1600" height="857" loading="lazy" decoding="async" alt="A new chat where the agent's target_notes_list call returns three saved notes about staging.acme.test."></figure>
+        </article>
+
+        <div class="duo duo-report reveal">
+          <article class="card">
+            <p class="act">It reports.</p>
+            <h3>Every finding, written up.</h3>
+            <p>Findings are logged with severity, status, evidence and which subagent found them — and export as a structured report.</p>
+            <figure><img src="assets/img/report.webp" width="1600" height="1068" loading="lazy" decoding="async" alt="A findings panel listing an exposed .git directory as medium and an outdated Jetty as low, with an exported markdown findings report."></figure>
+          </article>
+          <article class="card card-phone">
+            <figure><img src="assets/img/phone.webp" width="1060" height="1880" loading="lazy" decoding="async" alt="A phone chat with the TRShell bot: the recon on staging.acme.test is complete with 2 issues found; the reply 'Go deeper on the .git exposure' is acknowledged and the session continues."></figure>
+            <div>
+              <h3>And it tells your phone.</h3>
+              <p>Get a message on Telegram or Discord when a run finishes, stalls or crashes. Reply to steer the session from wherever you are.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- trailer -->
+    <section class="trailer" id="trailer" aria-labelledby="t-h">
+      <div class="wrap">
+        <header class="sec-h">
+          <p class="eyebrow">The trailer</p>
+          <h2 id="t-h">Fifty seconds, six acts.</h2>
+        </header>
+        <div class="player reveal">
+          <video controls preload="none" playsinline poster="assets/img/poster-trailer.webp" width="1920" height="1080">
+            <source src="assets/video/trailer.mp4" type="video/mp4">
+            <track kind="captions" src="assets/video/trailer.vtt" srclang="en" label="English">
+            Your browser can't play this video. <a href="assets/video/trailer.mp4">Download the trailer</a>.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- control -->
+    <section class="control" id="control" aria-labelledby="c-h">
+      <div class="wrap">
+        <header class="sec-h">
+          <p class="eyebrow">Built for authorised work</p>
+          <h2 id="c-h">You set the guardrails. It stays visible.</h2>
+        </header>
+        <ul class="grid reveal">
+          <li class="tile">
+            <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <h3>Nothing hidden</h3>
+            <p>Every command runs in a tab you can see, and every edit shows as a live diff.</p>
+          </li>
+          <li class="tile">
+            <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <h3>Per-agent shell access</h3>
+            <p>Unrestricted, no deletion or read-only, with allow and deny lists — set separately for every agent profile.</p>
+          </li>
+          <li class="tile">
+            <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+            <h3>Scope warnings</h3>
+            <p>Declare what's in scope. A command that reaches outside it raises a warning, and the agent checks in with you.</p>
+          </li>
+          <li class="tile">
+            <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <h3>Runs on your machine</h3>
+            <p>The agent's gateway listens on localhost only. Notification bot tokens are encrypted at rest.</p>
+          </li>
+          <li class="tile">
+            <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H8l-3 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Memory you approve</h3>
+            <p>Anything the agent wants to remember long-term waits for your approval before it's saved.</p>
+          </li>
+          <li class="tile">
+            <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6v6H9z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <h3>Your models</h3>
+            <p>Use hosted providers or keep everything local with Ollama. Extend it with MCP servers, skills and custom rules.</p>
+          </li>
+        </ul>
+        <p class="note reveal"><strong>Worth knowing:</strong> the agent runs the commands it writes without stopping to ask each time. The guardrail is the shell access you give each agent — so start with read-only or no-deletion for anything sensitive.</p>
+      </div>
+    </section>
+
+    <!-- early access -->
+    <section class="access" id="access" aria-labelledby="a-h">
+      <div class="wrap">
+        <header class="sec-h">
+          <p class="eyebrow">Early access</p>
+          <h2 id="a-h">Use it on your next engagement.</h2>
+          <p class="sub">TRShell is in early access for Debian-based Linux. Tell us a little about how you'd use it and we'll get back to you.</p>
+        </header>
+        <div class="plans reveal">
+          <article class="plan">
+            <h3>For organisations</h3>
+            <p>Security teams, consultancies and SOCs. Team licences, onboarding, and a direct line for feedback.</p>
+            <a class="btn btn-primary" href="mailto:trust.oluwasegun@trackedincorp.org?subject=TRShell%20early%20access%20%E2%80%94%20organisation&amp;body=Name%3A%0AOrganisation%3A%0AHow%20many%20seats%3A%0AWhat%20you%27d%20use%20it%20for%3A%0A">Request team access</a>
+          </article>
+          <article class="plan">
+            <h3>For individuals</h3>
+            <p>Pentesters, bug bounty hunters, researchers and students who want an agent in their own terminal.</p>
+            <a class="btn btn-ghost" href="mailto:trust.oluwasegun@trackedincorp.org?subject=TRShell%20early%20access%20%E2%80%94%20personal&amp;body=Name%3A%0AWhat%20you%27d%20use%20it%20for%3A%0A">Request personal access</a>
+          </article>
+        </div>
+        <p class="contact reveal">Or write directly: <a href="mailto:trust.oluwasegun@trackedincorp.org">trust.oluwasegun@trackedincorp.org</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <svg class="mark" viewBox="108 134 289 244" aria-hidden="true"><polyline points="132.5,158.5 247.5,255.5 132.5,352.5" fill="none" stroke="currentColor" stroke-width="49" stroke-linecap="round" stroke-linejoin="round"/><rect x="289" y="305" width="108" height="48" rx="9" fill="currentColor"/></svg>
+        <span>TRShell</span>
+      </a>
+      <p>For authorised security testing only.</p>
+      <p>&copy; <span id="yr">2026</span> TRShell</p>
+    </div>
+  </footer>
+</body>
+</html>
