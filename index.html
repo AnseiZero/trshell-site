@@ -33,17 +33,21 @@
         <svg class="mark" viewBox="108 134 289 244" aria-hidden="true"><polyline points="132.5,158.5 247.5,255.5 132.5,352.5" fill="none" stroke="currentColor" stroke-width="49" stroke-linecap="round" stroke-linejoin="round"/><rect x="289" y="305" width="108" height="48" rx="9" fill="currentColor"/></svg>
         <span>TRShell</span>
       </a>
-      <nav class="nav" aria-label="Main">
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav class="nav" id="mainNav" aria-label="Main">
         <a href="#features">Features</a>
         <a href="#trailer">Trailer</a>
         <a href="#control">Control</a>
         <a href="#access">Early access</a>
       </nav>
-      <a class="btn btn-primary btn-sm" href="#access">Get early access</a>
+      <a class="btn btn-ghost btn-sm top-cta" id="topCta" href="#access">Get early access</a>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <!-- hero -->
     <section class="hero">
       <div class="wrap hero-in">
@@ -102,7 +106,7 @@
             <h3>A plan before it acts. A model for every role.</h3>
             <p>Every task opens with a step-by-step plan, a feasibility score and a TODO list seeded from it. Planner, executor, debugger and critic can each run on a different model, and a role falls back to your chat model if its own is unavailable.</p>
           </div>
-          <figure class="feat-img"><img src="assets/img/plan.webp" width="1600" height="1061" loading="lazy" decoding="async" alt="A plan card with four steps and an 82% feasibility score, above a profile that binds the planner, executor, debugger and critic roles to Anthropic, OpenAI-compatible, Google and Ollama."></figure>
+          <figure class="feat-img"><img src="assets/img/plan-800.webp" srcset="assets/img/plan-800.webp 800w, assets/img/plan.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="1061" loading="lazy" decoding="async" alt="A plan card with four steps and an 82% feasibility score, above a profile that binds the planner, executor, debugger and critic roles to Anthropic, OpenAI-compatible, Google and Ollama."></figure>
         </article>
 
         <article class="feat feat-rev reveal">
@@ -111,17 +115,17 @@
             <h3>Your real terminal. Every command in the open.</h3>
             <p>The agent works in the same local and SSH tabs you use, so you see exactly what it ran. Tool cards stream output while a command is still running; nothing happens behind your back.</p>
           </div>
-          <figure class="feat-img"><img src="assets/img/terminal.webp" width="1600" height="1095" loading="lazy" decoding="async" alt="An exec_command card marked done above a terminal tab named local-main, where the agent ran nmap against staging.acme.test and four open ports are listed."></figure>
+          <figure class="feat-img"><img src="assets/img/terminal-800.webp" srcset="assets/img/terminal-800.webp 800w, assets/img/terminal.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="1095" loading="lazy" decoding="async" alt="An exec_command card marked done above a terminal tab named local-main, where the agent ran nmap against staging.acme.test and four open ports are listed."></figure>
         </article>
 
         <div class="duo reveal">
           <article class="card">
-            <figure><img src="assets/img/browser.webp" width="1600" height="1262" loading="lazy" decoding="async" alt="The built-in browser showing a 403 Forbidden page for /admin, with browser_navigate, browser_click and browser_screenshot tool calls below it."></figure>
+            <figure><img src="assets/img/browser-800.webp" srcset="assets/img/browser-800.webp 800w, assets/img/browser.webp 1600w" sizes="(min-width: 1024px) 40vw, 100vw" width="1600" height="1262" loading="lazy" decoding="async" alt="The built-in browser showing a 403 Forbidden page for /admin, with browser_navigate, browser_click and browser_screenshot tool calls below it."></figure>
             <h3>It drives a real browser.</h3>
             <p>Navigate, click, type, read pages, take screenshots and check the console — in a built-in browser you can watch.</p>
           </article>
           <article class="card">
-            <figure><img src="assets/img/diff.webp" width="1600" height="1208" loading="lazy" decoding="async" alt="A message with an attached screenshot of a 403 page, and an edited notes file whose diff adds three lines and removes one."></figure>
+            <figure><img src="assets/img/diff-800.webp" srcset="assets/img/diff-800.webp 800w, assets/img/diff.webp 1600w" sizes="(min-width: 1024px) 40vw, 100vw" width="1600" height="1208" loading="lazy" decoding="async" alt="A message with an attached screenshot of a 403 page, and an edited notes file whose diff adds three lines and removes one."></figure>
             <h3>Paste a screenshot. Watch every edit live.</h3>
             <p>Drop an image into the chat. File edits and diffs appear while they're being written, not after.</p>
           </article>
@@ -133,7 +137,7 @@
             <h3>Subagents on their own limits.</h3>
             <p>The main agent hands parts of a job to subagent profiles you define. Each gets its own lane in the chat and its own shell access — unrestricted, no deletion, or read-only. Declare your scope, and it warns you before a command reaches outside it.</p>
           </div>
-          <figure class="feat-img"><img src="assets/img/subagents.webp" width="1600" height="1108" loading="lazy" decoding="async" alt="Two subagent lanes, web-recon with no-deletion access and vuln-triage with read-only access, followed by a warning that prod.acme.test is not in the declared scope."></figure>
+          <figure class="feat-img"><img src="assets/img/subagents-800.webp" srcset="assets/img/subagents-800.webp 800w, assets/img/subagents.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="1108" loading="lazy" decoding="async" alt="Two subagent lanes, web-recon with no-deletion access and vuln-triage with read-only access, followed by a warning that prod.acme.test is not in the declared scope."></figure>
         </article>
 
         <article class="feat feat-rev reveal">
@@ -142,7 +146,7 @@
             <h3>When a command fails, it works out why.</h3>
             <p>A debugger role diagnoses the failure — root cause and a suggested fix — and the agent retries with it applied. It also notices when it's stuck repeating itself and breaks out of the loop.</p>
           </div>
-          <figure class="feat-img"><img src="assets/img/recover.webp" width="1600" height="1068" loading="lazy" decoding="async" alt="A failed ffuf command with a missing wordlist, a debugger diagnosis naming the root cause and fix, and a retry that succeeds."></figure>
+          <figure class="feat-img"><img src="assets/img/recover-800.webp" srcset="assets/img/recover-800.webp 800w, assets/img/recover.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="1068" loading="lazy" decoding="async" alt="A failed ffuf command with a missing wordlist, a debugger diagnosis naming the root cause and fix, and a retry that succeeds."></figure>
         </article>
 
         <article class="feat reveal">
@@ -151,7 +155,7 @@
             <h3>What it learns about a target, it keeps.</h3>
             <p>Recon the agent saves about a target carries into later chats, so a new session picks up where the last one left off instead of starting cold.</p>
           </div>
-          <figure class="feat-img"><img src="assets/img/notes.webp" width="1600" height="857" loading="lazy" decoding="async" alt="A new chat where the agent's target_notes_list call returns three saved notes about staging.acme.test."></figure>
+          <figure class="feat-img"><img src="assets/img/notes-800.webp" srcset="assets/img/notes-800.webp 800w, assets/img/notes.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" width="1600" height="857" loading="lazy" decoding="async" alt="A new chat where the agent's target_notes_list call returns three saved notes about staging.acme.test."></figure>
         </article>
 
         <div class="duo duo-report reveal">
@@ -159,10 +163,10 @@
             <p class="act">It reports.</p>
             <h3>Every finding, written up.</h3>
             <p>Findings are logged with severity, status, evidence and which subagent found them — and export as a structured report.</p>
-            <figure><img src="assets/img/report.webp" width="1600" height="1068" loading="lazy" decoding="async" alt="A findings panel listing an exposed .git directory as medium and an outdated Jetty as low, with an exported markdown findings report."></figure>
+            <figure><img src="assets/img/report-800.webp" srcset="assets/img/report-800.webp 800w, assets/img/report.webp 1600w" sizes="(min-width: 1024px) 40vw, 100vw" width="1600" height="1068" loading="lazy" decoding="async" alt="A findings panel listing an exposed .git directory as medium and an outdated Jetty as low, with an exported markdown findings report."></figure>
           </article>
           <article class="card card-phone">
-            <figure><img src="assets/img/phone.webp" width="1060" height="1880" loading="lazy" decoding="async" alt="A phone chat with the TRShell bot: the recon on staging.acme.test is complete with 2 issues found; the reply 'Go deeper on the .git exposure' is acknowledged and the session continues."></figure>
+            <figure><img src="assets/img/phone-530.webp" srcset="assets/img/phone-530.webp 530w, assets/img/phone.webp 1060w" sizes="(min-width: 1024px) 220px, 300px" width="1060" height="1880" loading="lazy" decoding="async" alt="A phone chat with the TRShell bot: the recon on staging.acme.test is complete with 2 issues found; the reply 'Go deeper on the .git exposure' is acknowledged and the session continues."></figure>
             <div>
               <h3>And it tells your phone.</h3>
               <p>Get a message on Telegram or Discord when a run finishes, stalls or crashes. Reply to steer the session from wherever you are.</p>
@@ -197,38 +201,38 @@
           <h2 id="c-h">You set the guardrails. It stays visible.</h2>
         </header>
         <ul class="grid reveal">
-          <li class="tile">
+          <li class="tile" style="--i:0">
             <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3>Nothing hidden</h3>
             <p>Every command runs in a tab you can see, and every edit shows as a live diff.</p>
           </li>
-          <li class="tile">
+          <li class="tile" style="--i:1">
             <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
             <h3>Per-agent shell access</h3>
             <p>Unrestricted, no deletion or read-only, with allow and deny lists — set separately for every agent profile.</p>
           </li>
-          <li class="tile">
+          <li class="tile" style="--i:2">
             <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
             <h3>Scope warnings</h3>
             <p>Declare what's in scope. A command that reaches outside it raises a warning, and the agent checks in with you.</p>
           </li>
-          <li class="tile">
+          <li class="tile" style="--i:3">
             <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3>Runs on your machine</h3>
             <p>The agent's gateway listens on localhost only. Notification bot tokens are encrypted at rest.</p>
           </li>
-          <li class="tile">
+          <li class="tile" style="--i:4">
             <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H8l-3 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <h3>Memory you approve</h3>
             <p>Anything the agent wants to remember long-term waits for your approval before it's saved.</p>
           </li>
-          <li class="tile">
+          <li class="tile" style="--i:5">
             <svg class="tic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6v6H9z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3>Your models</h3>
             <p>Use hosted providers or keep everything local with Ollama. Extend it with MCP servers, skills and custom rules.</p>
           </li>
         </ul>
-        <p class="note reveal"><strong>Worth knowing:</strong> the agent runs the commands it writes without stopping to ask each time. The guardrail is the shell access you give each agent — so start with read-only or no-deletion for anything sensitive.</p>
+        <p class="note"><strong>Worth knowing:</strong> the agent runs the commands it writes without stopping to ask each time. The guardrail is the shell access you give each agent — so start with read-only or no-deletion for anything sensitive.</p>
       </div>
     </section>
 
@@ -252,14 +256,21 @@
             <a class="btn btn-ghost" href="mailto:trust.oluwasegun@trackedincorp.org?subject=TRShell%20early%20access%20%E2%80%94%20personal&amp;body=Name%3A%0AWhat%20you%27d%20use%20it%20for%3A%0A">Request personal access</a>
           </article>
         </div>
-        <p class="contact reveal">Or write directly: <a href="mailto:trust.oluwasegun@trackedincorp.org">trust.oluwasegun@trackedincorp.org</a></p>
+        <div class="contact">
+          <p>Or write directly: <a href="mailto:trust.oluwasegun@trackedincorp.org">trust.oluwasegun@trackedincorp.org</a></p>
+          <button class="btn btn-ghost btn-sm copy" id="copyEmail" type="button" data-email="trust.oluwasegun@trackedincorp.org" hidden>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <span class="copy-l">Copy email</span>
+          </button>
+          <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap foot-in">
-      <a class="brand" href="#top" aria-label="Back to top">
+      <a class="brand" href="#top" aria-label="TRShell, back to top">
         <svg class="mark" viewBox="108 134 289 244" aria-hidden="true"><polyline points="132.5,158.5 247.5,255.5 132.5,352.5" fill="none" stroke="currentColor" stroke-width="49" stroke-linecap="round" stroke-linejoin="round"/><rect x="289" y="305" width="108" height="48" rx="9" fill="currentColor"/></svg>
         <span>TRShell</span>
       </a>
