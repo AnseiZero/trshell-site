@@ -202,7 +202,7 @@ main:focus { outline: none; }               /* the skip-link target, focused pro
 
 /* ---------- section heads ---------- */
 section { scroll-margin-top: calc(var(--header-h) + 8px); }
-.features, .trailer, .control, .access { padding: var(--sp-6) 0; }
+.features, .who, .trailer, .control, .access { padding: var(--sp-6) 0; }
 .sec-h { max-width: 720px; margin-bottom: var(--sp-5); }
 .eyebrow { font: 500 var(--t-label) var(--mono); color: var(--accent); }
 .sec-h h2 { margin-top: 12px; font-size: var(--t-h2); }
@@ -235,6 +235,25 @@ section { scroll-margin-top: calc(var(--header-h) + 8px); }
   .card-phone { flex-direction: row; align-items: center; gap: var(--sp-3); }
   .card-phone figure { order: 0; flex: 0 0 42%; }
 }
+
+/* ---------- who it's for ---------- */
+.who { border-top: 1px solid var(--line); }
+.users { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
+.user { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--sp-3); display: flex; flex-direction: column; }
+.user h3 { margin-top: 14px; font-size: var(--t-title); }
+.user > p { margin-top: 8px; color: var(--fg-2); font-size: var(--t-small); }
+.gains { list-style: none; margin: var(--sp-2) 0 0; padding: var(--sp-2) 0 0; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.gains li { position: relative; padding-left: 24px; color: var(--muted); font-size: var(--t-small); line-height: 1.5; }
+.gains li::before {                       /* a small check, drawn in CSS so it stays decorative */
+  content: ""; position: absolute; left: 2px; top: .42em; width: 10px; height: 5px;
+  border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg);
+}
+.who-also { margin-top: var(--sp-3); color: var(--muted); font-size: var(--t-small); }
+@media (min-width: 768px) { .users { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .user { padding: var(--sp-4); } }
+.js .users.reveal .user { opacity: 0; transform: translateY(10px); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); transition-delay: calc(var(--i, 0) * 40ms); }
+.js .users.reveal.in { opacity: 1; transform: none; }
+.js .users.reveal.in .user { opacity: 1; transform: none; }
 
 /* ---------- trailer ---------- */
 .trailer { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -286,7 +305,7 @@ section { scroll-margin-top: calc(var(--header-h) + 8px); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .js .reveal, .js .grid.reveal .tile { opacity: 1; transform: none; transition: none; }
+  .js .reveal, .js .grid.reveal .tile, .js .users.reveal .user { opacity: 1; transform: none; transition: none; }
   .btn, .vtoggle, .nav a, .top, .menu-btn { transition: none; }
   .btn:active, .vtoggle:active { transform: none; }
 }
