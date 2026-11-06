@@ -183,6 +183,91 @@
     });
   }
 
+  // ---- the reveal: a light that follows the pointer over raw scan output ----
+  // Wide screens only (phones show both layers stacked). Without JS the agent's
+  // layer just sits masked at its default spot, and the toggle stays hidden.
+  const xr = document.querySelector(".xr");
+  const xrPane = document.getElementById("xrPane");
+  const xrStage = document.getElementById("xrStage");
+  const xrToggle = document.getElementById("xrToggle");
+  if (xr && xrPane && xrStage) {
+    const wide = window.matchMedia("(min-width: 768px)");
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0, sweeping = false, swept = false;
+    const write = () => {
+      xrStage.style.setProperty("--mx", `${cx.toFixed(1)}px`);
+      xrStage.style.setProperty("--my", `${cy.toFixed(1)}px`);
+    };
+    // at rest the light sits on the findings, so the payoff is visible before anyone moves
+    const rest = () => {
+      const stack = xrPane.querySelector(".xr-stack").getBoundingClientRect();
+      const hits = xrPane.querySelectorAll(".xr-agent .hit .t");
+      if (hits.length < 2) return { x: xrPane.clientWidth * 0.5, y: xrPane.clientHeight * 0.42 };
+      const a = hits[0].getBoundingClientRect(), b = hits[1].getBoundingClientRect();
+      // centre on the chip column, so both severity chips sit fully inside the light
+      const chips = [...xrPane.querySelectorAll(".xr-agent .hit .chip")].map((c) => c.getBoundingClientRect().right);
+      const right = chips.length ? Math.max(...chips) : a.right;
+      return { x: (a.right + right) / 2 - stack.left, y: (a.top + b.bottom) / 2 - stack.top };
+    };
+    const park = () => { const p = rest(); tx = cx = p.x; ty = cy = p.y; write(); };
+    // ease toward the pointer: a share of the remaining distance each frame
+    const tick = () => {
+      raf = 0;
+      cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16; write();
+      if (Math.hypot(tx - cx, ty - cy) > 0.4) raf = requestAnimationFrame(tick);
+    };
+    const aim = (e) => {
+      if (!wide.matches || xr.classList.contains("is-open")) return;
+      sweeping = false;
+      const r = xrPane.getBoundingClientRect();
+      // if an ancestor ever scales the pane, divide by that scale or the light drifts off the cursor
+      const sx = r.width ? xrPane.offsetWidth / r.width : 1;
+      const sy = r.height ? xrPane.offsetHeight / r.height : 1;
+      // the mask lives in the scrolled content, so add the pane's scroll offset
+      tx = (e.clientX - r.left) * sx + xrPane.scrollLeft;
+      ty = (e.clientY - r.top) * sy + xrPane.scrollTop;
+      xr.classList.add("is-touched");
+      if (reduce.matches) { cx = tx; cy = ty; write(); }      // no inertia under reduced motion
+      else if (!raf) raf = requestAnimationFrame(tick);
+    };
+    xrPane.addEventListener("pointermove", aim);
+    xrPane.addEventListener("pointerdown", aim);
+
+    // one sweep across the output the first time it's seen, to show there's something underneath
+    const sweep = () => {
+      if (swept || reduce.matches || !wide.matches) return;
+      swept = sweeping = true;
+      // start over the first command, travel down the output, come to rest on the findings
+      const end = rest(), x0 = xrPane.clientWidth * 0.18, y0 = end.y * 0.25, t0 = performance.now(), ms = 1400;
+      const step = (now) => {
+        if (!sweeping) return;                                  // the pointer took over
+        const p = Math.min(1, (now - t0) / ms), k = 1 - Math.pow(1 - p, 3);
+        tx = cx = x0 + (end.x - x0) * k; ty = cy = y0 + (end.y - y0) * k; write();
+        if (p < 1) requestAnimationFrame(step); else sweeping = false;
+      };
+      requestAnimationFrame(step);
+    };
+
+    const sync = () => { xr.classList.toggle("is-live", wide.matches); park(); };
+    sync();
+    wide.addEventListener?.("change", sync);
+    window.addEventListener("resize", () => { if (!xr.classList.contains("is-touched")) park(); }, { passive: true });
+    if (hasIO) {
+      const seen = new IntersectionObserver(([e]) => { if (e.isIntersecting) { sweep(); seen.disconnect(); } }, { threshold: 0.45 });
+      seen.observe(xrPane);
+    } else { sweep(); }
+
+    if (xrToggle) {
+      xrToggle.hidden = false;
+      const lab = xrToggle.querySelector(".xr-tl");
+      xrToggle.addEventListener("click", () => {
+        const open = xr.classList.toggle("is-open");
+        sweeping = false;
+        xrToggle.setAttribute("aria-pressed", String(open));
+        lab.textContent = open ? "Back to the spotlight" : "Reveal everything";
+      });
+    }
+  }
+
   const yr = document.getElementById("yr");
   if (yr) yr.textContent = String(new Date().getFullYear());
 })();
