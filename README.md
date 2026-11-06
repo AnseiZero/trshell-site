@@ -1,9 +1,13 @@
 # TRShell — website
 
 The marketing site for **TRShell**, a desktop terminal with an AI agent built in.
-Static HTML/CSS/JS with no build step, served by GitHub Pages from `main`.
+Static HTML/CSS/JS with no build step, hosted on Vercel: every push to `main`
+deploys to production.
 
-Live: https://anseizero.github.io/trshell-site/
+Live: https://trshell.trackedincorp.org
+
+Hosting moved off GitHub Pages because some networks (MTN Nigeria among them)
+block GitHub Pages' serving addresses, so `*.github.io` never loaded there.
 
 ## Structure
 - `index.html` — the page (hero, features, trailer, control, early access)
