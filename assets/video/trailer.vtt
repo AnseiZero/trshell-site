@@ -1,55 +1,130 @@
 WEBVTT
 
-00:00.000 --> 00:03.333
-[TRShell boots: agent runtime, gateway, model profiles, terminals — ready]
+00:00.000 --> 00:01.540
+Take a look at the world today.
 
-00:03.333 --> 00:06.667
-A terminal with an agent in it.
+00:02.120 --> 00:04.340
+Last year, the average attacker went from getting
 
-00:06.667 --> 00:08.000
-It thinks.
+00:04.340 --> 00:06.180
+in to moving through a network in just 29
 
-00:08.000 --> 00:12.000
-A plan before it acts. A model for every role.
+00:06.180 --> 00:08.760
+minutes, and the fastest did it in 27
 
-00:12.000 --> 00:13.333
-It works.
+00:08.760 --> 00:09.660
+seconds.
 
-00:13.333 --> 00:16.667
-Your real terminal. Every command in the open.
+00:10.020 --> 00:13.520
+Yet it still takes an organisation 241 days to
 
-00:16.667 --> 00:19.333
-It drives a real browser.
+00:13.520 --> 00:14.740
+find and contain a breach.
 
-00:19.333 --> 00:22.667
-Paste a screenshot. Watch every edit live.
+00:15.520 --> 00:18.500
+More than 48,000 new vulnerabilities were published in
 
-00:22.667 --> 00:24.000
-It delegates.
+00:18.500 --> 00:20.700
+a single year, and there are nearly 5
 
-00:24.000 --> 00:28.667
-Subagents on their own limits. A warning before it leaves scope.
+00:20.700 --> 00:23.360
+million security jobs that nobody can fill.
 
-00:28.667 --> 00:30.000
-It recovers.
+00:23.800 --> 00:25.560
+You simply can't hire your way out of
 
-00:30.000 --> 00:33.333
-When a command fails, it works out why.
+00:25.560 --> 00:26.460
+that.
 
-00:33.333 --> 00:34.667
-It remembers.
+00:26.520 --> 00:29.380
+That's why we built TRShell, a terminal with
 
-00:34.667 --> 00:38.000
-What it learns about a target, it keeps.
+00:29.380 --> 00:30.280
+an agent in it.
 
-00:38.000 --> 00:39.333
-It reports.
+00:30.680 --> 00:33.040
+Instead of helping with one command and then
 
-00:39.333 --> 00:42.667
-Every finding, written up as a report.
+00:33.040 --> 00:35.580
+waiting on you, it runs the whole engagement
 
-00:42.667 --> 00:47.333
-It tells you when it's done. Reply, and it keeps going.
+00:35.580 --> 00:39.000
+from scope and recon to evidence and the
 
-00:47.333 --> 00:51.333
-TRShell. A terminal with an agent in it.
+00:39.000 --> 00:41.500
+report with every command out in the open.
+
+00:42.480 --> 00:44.380
+It starts with a plan and you choose
+
+00:44.380 --> 00:45.740
+the model for every role.
+
+00:46.360 --> 00:49.020
+It works right inside your real terminal and
+
+00:49.020 --> 00:50.660
+it can drive a real browser too.
+
+00:51.300 --> 00:53.520
+When the job gets big, it hands pieces
+
+00:53.520 --> 00:56.600
+to subagents, each on its own limits, and
+
+00:56.600 --> 00:59.060
+it warns you before anything steps outside your
+
+00:59.060 --> 00:59.960
+scope.
+
+00:59.980 --> 01:02.240
+If a command fails, it works out why
+
+01:02.240 --> 01:03.140
+and tries again.
+
+01:03.760 --> 01:05.960
+Whatever it learns about a target, it keeps
+
+01:05.960 --> 01:08.880
+for next time. And every finding gets written
+
+01:08.880 --> 01:11.200
+up with a message to your phone the
+
+01:11.200 --> 01:12.100
+moment it's done.
+
+01:13.000 --> 01:14.780
+And it gets sharper with every engagement.
+
+01:15.540 --> 01:18.460
+Confirmed findings go into an engagement ledger, so
+
+01:18.460 --> 01:20.280
+even if you delete the session, the work
+
+01:20.280 --> 01:21.180
+survives.
+
+01:21.480 --> 01:23.080
+When it discovers a new way to test,
+
+01:23.080 --> 01:25.900
+it proposes it for your checklist, but nothing
+
+01:25.900 --> 01:27.540
+is written until you approve it.
+
+01:29.580 --> 01:32.980
+With 58 built-in tools, any MCP server,
+
+01:33.440 --> 01:36.020
+and fully local models through Ollama, it fits
+
+01:36.020 --> 01:37.800
+right into the way you already work.
+
+01:39.020 --> 01:42.000
+TRShell, a terminal with an agent in it.
