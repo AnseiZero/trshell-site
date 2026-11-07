@@ -158,7 +158,7 @@ main:focus { outline: none; }               /* the skip-link target, focused pro
 .hero { padding: var(--sp-5) 0; position: relative; overflow: hidden; }
 .hero::before {
   content: ""; position: absolute; inset: -20% -10% auto; height: 760px; pointer-events: none;
-  background: radial-gradient(ellipse 50% 50% at 70% 40%, rgba(240,160,60,.10), rgba(240,160,60,0) 70%);
+  background: none;
 }
 .hero-in { position: relative; display: grid; gap: var(--sp-4); align-items: center; }
 .kicker { display: inline-flex; align-items: center; gap: 10px; font: 500 var(--t-label)/1.4 var(--mono); color: var(--muted); }
@@ -175,7 +175,7 @@ main:focus { outline: none; }               /* the skip-link target, focused pro
 .frame {
   position: relative; border-radius: var(--r-lg); overflow: hidden;
   border: 1px solid var(--line-2); background: var(--media);
-  box-shadow: var(--shadow-float), 0 0 0 1px rgba(240,160,60,.08), 0 0 70px -30px var(--accent-glow);
+  box-shadow: var(--shadow-float), 0 0 0 1px var(--line-2);
 }
 .hero-video { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; }
 .vtoggle {
@@ -280,8 +280,8 @@ section { scroll-margin-top: calc(var(--header-h) + 8px); }
 /* ---------- early access ---------- */
 .demo {
   display: flex; flex-direction: column; gap: var(--sp-3); align-items: flex-start; margin-bottom: var(--sp-3);
-  background: var(--panel); border: 1px solid rgba(240,160,60,.45); border-radius: var(--r-lg); padding: var(--sp-4);
-  box-shadow: 0 0 0 1px rgba(240,160,60,.12), 0 0 60px -30px var(--accent-glow);
+  background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--r-lg); padding: var(--sp-4);
+  box-shadow: var(--shadow-float);
 }
 .demo h3 { font-size: var(--t-h3); }
 .demo p { margin-top: var(--sp-2); color: var(--muted); max-width: 60ch; }
@@ -360,7 +360,7 @@ section { scroll-margin-top: calc(var(--header-h) + 8px); }
   position: relative; container-type: inline-size;
   max-width: 860px; margin: 0 auto; padding: var(--sp-3); overflow: auto;
   background: var(--media); border: 1px solid var(--line-2); border-radius: var(--r-lg);
-  box-shadow: var(--shadow-float), 0 0 0 1px rgba(240,160,60,.06);
+  box-shadow: var(--shadow-float), 0 0 0 1px var(--line-2);
 }
 /* overflow: hidden — a transformed glow near the edge would otherwise widen the scroll area */
 .xr-stack { position: relative; width: max-content; min-width: 100%; overflow: hidden; }
