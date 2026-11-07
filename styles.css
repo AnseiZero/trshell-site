@@ -22,11 +22,10 @@
   --accent-hover: #f5b25b;
   --on-accent: #1a1917;
   --accent-soft: rgba(240, 160, 60, .12);
-  --accent-glow: rgba(240, 160, 60, .35);
   --ok: #6fb57a;
   --line: #33302b;
   --line-2: #4a463f;
-  --shadow-float: 0 40px 80px -40px rgba(0, 0, 0, .9);
+  --shadow-float: 0 24px 50px -34px rgba(0, 0, 0, .6);
 
   /* type — one scale */
   --t-label: 14px;
@@ -66,7 +65,7 @@ body {
 }
 img, video { display: block; max-width: 100%; height: auto; }
 a { color: var(--accent); text-underline-offset: 3px; }
-h1, h2 { margin: 0; line-height: 1.1; letter-spacing: -.02em; font-weight: 700; text-wrap: balance; }
+h1, h2 { margin: 0; line-height: 1.1; letter-spacing: -.02em; font-weight: 600; text-wrap: balance; }
 h3 { margin: 0; line-height: 1.15; letter-spacing: -.015em; font-weight: 600; text-wrap: balance; }
 p { margin: 0; }
 .acc { color: var(--accent); }
@@ -110,7 +109,7 @@ main:focus { outline: none; }               /* the skip-link target, focused pro
 }
 .top.scrolled { border-bottom-color: var(--line); }
 .top-in { display: flex; align-items: center; gap: var(--sp-2); height: var(--header-h); }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: var(--t-lead); letter-spacing: -.01em; min-height: 44px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 600; font-size: var(--t-lead); letter-spacing: -.01em; min-height: 44px; }
 .mark { width: 26px; height: auto; color: var(--accent); }
 
 /* one primary action per screen: the header CTA turns primary only once the hero's has scrolled away.
@@ -162,7 +161,7 @@ main:focus { outline: none; }               /* the skip-link target, focused pro
 }
 .hero-in { position: relative; display: grid; gap: var(--sp-4); align-items: center; }
 .kicker { display: inline-flex; align-items: center; gap: 10px; font: 500 var(--t-label)/1.4 var(--mono); color: var(--muted); }
-.kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(111,181,122,.16); }
+.kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px rgba(111,181,122,.10); }
 .hero h1 { margin-top: var(--sp-3); font-size: var(--t-h1); }
 .lede { margin-top: var(--sp-3); font-size: clamp(var(--t-lead), 1.9vw, var(--t-title)); color: var(--fg-2); max-width: 34ch; }
 .ctas { margin-top: var(--sp-4); display: flex; flex-wrap: wrap; gap: 12px; }
